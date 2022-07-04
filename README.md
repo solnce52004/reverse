@@ -35,16 +35,10 @@
     jar cfe StringReverser.jar src.main.java.ru.example.reverse.v1.StringReverser ./bin/main/java/ru/example/reverse/v1/StringReverser.class
     jar cfe SimpleStringReverser.jar main.java.ru.example.reverse.v2.SimpleStringReverser ./bin/main/java/ru/example/reverse/v2/SimpleStringReverser.class
 
-
-    jar cfe SimpleStringReverser.jar main.java.ru.example.reverse.v2.SimpleStringReverser src/main/java/ru/example/reverse/v2/SimpleStringReverser.java
-
 *Add manifest*
 
     jar cvfm StringReverser.jar ./src/main/java/ru/example/reverse/v1/META-INF/MANIFEST.MF ./bin/main/java/ru/example/reverse/v1/StringReverser.class
     jar cvfm SimpleStringReverser.jar ./src/main/java/ru/example/reverse/v2/META-INF/MANIFEST.MF ./bin/main/java/ru/example/reverse/v2/SimpleStringReverser.class
-
-
-    jar cvfm SimpleStringReverser.jar src/main/java/ru/example/reverse/v2/META-INF/MANIFEST.MF bin/main/java/ru/example/reverse/v2/SimpleStringReverser.class
 
 *Run jar*
 
