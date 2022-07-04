@@ -1,4 +1,4 @@
-package main.java.ru.example.reverse.v2;
+package ru.example.reverse.v2;
 
 
 import java.math.BigDecimal;
@@ -41,14 +41,30 @@ public final class SimpleStringReverser {
     /**
      * A method that expands a string in reverse order
      *
-     * @param in - entered string
+     * @param inStr - entered string
      * @return String - reversed string
      */
-    private static String reverse(String in) {
-        if (in.length() <= 1) {
-            return in;
+    private static String reverse(String inStr) {
+        if (inStr.length() <= 1) {
+            return inStr;
         }
-        return new StringBuilder(in).reverse().toString();
+
+        final char[] charArr = inStr.toCharArray();
+        final int lastIndex = charArr.length - 1;
+
+        for (int i = 0; i < charArr.length / 2; i++) {
+            char tmp = charArr[i];
+            charArr[i] = charArr[lastIndex - i];
+            charArr[lastIndex - i] = tmp;
+        }
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < charArr.length; i++) {
+            sb.append(charArr[i]);
+        }
+
+        return sb.toString();
+        //return new StringBuffer(in).reverse().toString();
     }
 
     private static BigDecimal measureEachTime(String in, Integer iterations) {

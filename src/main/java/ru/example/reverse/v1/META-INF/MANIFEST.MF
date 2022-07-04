@@ -1,2 +1,2 @@
-Main-Class: main.java.ru.example.reverse.v1.StringReverser
+Main-Class: ru.example.reverse.v1.StringReverser
 Manifest-Version: 1.0
