@@ -13,7 +13,7 @@
 
 Наиболее оптимальным методом для переворота строки (помимо представленного алгоритма итерации со сложностью O(n)) также можно предложить
 
-     new StringBuffer(in).reverse().toString()
+     new StringBuilder(in).reverse().toString()
 
 (При использовании в многопоточном приложении следует заменить на StringBuffer)<br>
 
@@ -26,24 +26,34 @@
 
 *Compile and run commands (from the root of the project):*
 
-    javac -sourcepath ./src -d bin src/main/java/ru/example/reverse/v1/StringReverser.java
-    java -classpath ./bin main.java.ru.example.reverse.v1.StringReverser
+    // For App Version 1:
+    javac -sourcepath ./src -d bin src/main/java/ru/example/reverse/v1/*.java
+    java -classpath ./bin ru.example.reverse.v1.StringReverser
 
+    //For App Version 2:
     javac -sourcepath ./src -d bin src/main/java/ru/example/reverse/v2/SimpleStringReverser.java
-    java -classpath ./bin main.java.ru.example.reverse.v2.SimpleStringReverser
+    java -classpath ./bin ru.example.reverse.v2.SimpleStringReverser
 
+*Create jar*
 
-*Create jar (from bin)*
-
-    jar cfe StringReverser.jar src.main.java.ru.example.reverse.v1.StringReverser ./bin/main/java/ru/example/reverse/v1/StringReverser.class
-    jar cfe SimpleStringReverser.jar main.java.ru.example.reverse.v2.SimpleStringReverser ./bin/main/java/ru/example/reverse/v2/SimpleStringReverser.class
+    // For App Version 1:
+    jar cfe StringReverser.jar ru.example.reverse.v1.StringReverser src/main/java/ru/example/reverse/v1/*.java
+    //For App Version 2:
+    jar cfe SimpleStringReverser.jar ru.example.reverse.v2.SimpleStringReverser src/main/java/ru/example/reverse/v2/*.java
 
 *Add manifest*
 
-    jar cvfm StringReverser.jar ./src/main/java/ru/example/reverse/v1/META-INF/MANIFEST.MF ./bin/main/java/ru/example/reverse/v1/StringReverser.class
-    jar cvfm SimpleStringReverser.jar ./src/main/java/ru/example/reverse/v2/META-INF/MANIFEST.MF ./bin/main/java/ru/example/reverse/v2/SimpleStringReverser.class
+    //For App Version 1:
+    jar cvfm StringReverser.jar src/main/java/ru/example/reverse/v1/META-INF/MANIFEST.MF src/main/java/ru/example/reverse/v1/*.java
+    //For App Version 2:
+    jar cvfm SimpleStringReverser.jar src/main/java/ru/example/reverse/v2/META-INF/MANIFEST.MF src/main/java/ru/example/reverse/v2/*.java
 
 *Run jar*
-
+    
+    //For App Version 1:
     java -jar StringReverser.jar
+    java -cp StringReverser.jar  src/main/java/ru/example/reverse/v1/StringReverser.java
+
+    //For App Version 2:
     java -jar SimpleStringReverser.jar
+    java -cp SimpleStringReverser.jar src/main/java/ru/example/reverse/v2/SimpleStringReverser.java

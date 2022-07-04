@@ -1,1 +1,2 @@
 Main-Class: ru.example.reverse.v2.SimpleStringReverser
+Manifest-Version: 1.0

@@ -41,15 +41,15 @@ public final class SimpleStringReverser {
     /**
      * A method that expands a string in reverse order
      *
-     * @param inStr - entered string
+     * @param in - entered string
      * @return String - reversed string
      */
-    private static String reverse(String inStr) {
-        if (inStr.length() <= 1) {
-            return inStr;
+    private static String reverse(String in) {
+        if (in.length() <= 1) {
+            return in;
         }
 
-        final char[] charArr = inStr.toCharArray();
+        final char[] charArr = in.toCharArray();
         final int lastIndex = charArr.length - 1;
 
         for (int i = 0; i < charArr.length / 2; i++) {
@@ -64,7 +64,7 @@ public final class SimpleStringReverser {
         }
 
         return sb.toString();
-        //return new StringBuffer(in).reverse().toString();
+        //return new StringBuilder(in).reverse().toString();
     }
 
     private static BigDecimal measureEachTime(String in, Integer iterations) {

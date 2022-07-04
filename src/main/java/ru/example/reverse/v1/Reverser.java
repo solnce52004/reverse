@@ -18,8 +18,8 @@ final class Reverser {
         );
     }
 
-    private String getReversedString(String inStr) {
-        final char[] charArr = inStr.toCharArray();
+    private String getReversedString(String in) {
+        final char[] charArr = in.toCharArray();
         final int lastIndex = charArr.length - 1;
 
         for (int i = 0; i < charArr.length / 2; i++) {
@@ -37,6 +37,6 @@ final class Reverser {
     }
 
     private String getReversedStringVsSB(String in) {
-        return new StringBuffer(in).reverse().toString();
+        return new StringBuilder(in).reverse().toString();
     }
 }
