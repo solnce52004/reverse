@@ -1,5 +1,2 @@
 /.idea/
-/bin/
-
-/SimpleStringReverser.jar
-/StringReverser.jar
+/target/
